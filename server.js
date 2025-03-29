@@ -10,6 +10,9 @@ let todos = [{
 }];
 
 app.use(express.json());
+app.use((req, res, next) => {
+  console.log('New request URL:', req.url);
+})
 
 app.get('/api/todos', (req, res) => {
   res.json(todos);
